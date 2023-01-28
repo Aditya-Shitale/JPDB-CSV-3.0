@@ -35,37 +35,59 @@ and open the template in the editor.
         <div class="form-group row">
           <label class="col-form-label col-sm-3 text-center my-auto" >Column Separator:</label>
           <div class="col-sm-9">
-            <input type="text" id="colSep" class="form-control">
+            <select type="text" id="colSep" class="form-control">
+              <option selected>,</option>
+              <option value="1">/t</option>
+              <option value="1">|</option>
+            </select>
+
           </div>
         </div>
         <div class="form-group row">
           <label class="col-form-label col-sm-3 text-center my-auto" >Row Separator: </label>
           <div class="col-sm-9">
-            <input type="text" id="rowSep" class="form-control" >
+            <select type="text" id="rowSep" class="form-control" >
+              <option selected>\n</option>
+              <option value="1">\n\r</option>
+              <option value="2">\r</option>
+              </select>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-form-label col-sm-3 text-center my-auto" >Start Encloser: </label>
           <div class="col-sm-9">
-            <input type="text" id="startEnc" class="form-control" >
+            <select type="text" id="startEnc" class="form-control" >
+                <option selected>"</option>
+                <option value="1">'</option>
+              </select>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-form-label col-sm-3 text-center my-auto" >End encloser: </label>
           <div class="col-sm-9">
-            <input type="text" id="endEnc" class="form-control" >
+            <select type="text" id="endEnc" class="form-control" >
+              <option selected>"</option>
+              <option value="1">'</option>
+              </select>
+              
           </div>
         </div>
         <div class="form-group row">
           <label class="col-form-label col-sm-3 text-center my-auto" >First Row is Column Name: </label>
           <div class="col-sm-9">
-            <input type="text" id="firstRowCol" class="form-control" >
+            <select type="text" id="firstRowCol" class="form-control" >
+              <option selected>true</option>
+              <option value="1">false</option>
+              </select>
           </div>
         </div>
         <div class="form-group row">
           <label class="col-form-label col-sm-3 text-center my-auto" >Force Import: </label>
           <div class="col-sm-9">
-            <input type="text" id="forceImport" class="form-control" >
+            <select type="text" id="forceImport" class="form-control" >
+              <option selected>false</option>
+              <option value="1">true</option>
+              </select>
           </div>
         </div>
         <div class="form-group row">

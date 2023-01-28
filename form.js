@@ -12,20 +12,41 @@ function Submit(){
     dbName=$("#dbName").val();
     relName=$("#relName").val();
     colSep=$("#colSep").val();
-    // rowSep=$("#rowSep").val();
-    rowSep="\n"
+    if($("#rowSep").val()==="\\n"){
+        rowSep="\n";
+    }
+    if($("#rowSep").val()==="\n"){
+        rowSep="\n";
+    }
+    if($("#rowSep").val()==="\n\r"){
+        rowSep="\n\r";
+    }
+    if($("#rowSep").val()==="\\n\r"){
+        rowSep="\n\r";
+    }
+    if($("#rowSep").val()==="\\r"){
+        rowSep="\r";
+    }
+    if($("#rowSep").val()==="\r"){
+        rowSep="\r";
+    }
+
+    
     startEnc=$("#startEnc").val();
-    // endEnc=$("#endEnc").val();
-    endEnc="\n"
-    console.log(dbName)
-    console.log(firstRowCol)
-    console.log(endEnc)
-    console.log(startEnc)
-    console.log(rowSep)
-    console.log(colSep)
-    console.log(relName)
-    firstRowCol= true;
-    forceImport= true;
+    endEnc=$("#endEnc").val();
+    if($("#firstRowCol").val()==="true"){
+        firstRowCol=true;
+    }
+    if($("#firstRowCol").val()==="false"){
+        forceImport= false;
+    }
+    if($("#forceImport").val()==="true"){
+        forceImport=true;
+    }
+    if($("#forceImport").val()==="false"){
+        forceImport=false;
+    }
+
 
   var jsonObjStr=null;
     file=document.getElementById("choseFile");
@@ -37,7 +58,7 @@ function Submit(){
         console.log("array")
         text = e.target.result;
         // best=JSON.stringify(text)
-        console.log(best)
+        // console.log(best)
         jsonObjStr={
             token: conntoken,
             dbName:dbName,
