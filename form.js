@@ -1,6 +1,6 @@
 const reader = new FileReader();
 var conntoken=localStorage.getItem("token_no");
-console.log(conntoken)
+// console.log(conntoken)
 var url ="http://api.login2explore.com:5577"
 var endpoint="/jpdb/etl/csv/v01/import"
 
@@ -55,7 +55,7 @@ function Submit(){
     // console.log(input)
     let text,best;
     reader.onload = function (e) { 
-        console.log("array")
+        // console.log("array")
         text = e.target.result;
         // best=JSON.stringify(text)
         // console.log(best)
@@ -74,7 +74,7 @@ function Submit(){
             }
         }
         req=JSON.stringify(jsonObjStr)
-        console.log(req)
+        // console.log(req)
         send(req)
     };
     reader.readAsText(input);
@@ -99,6 +99,13 @@ function send(req){
    jQuery.ajaxSetup({async:false})
     var result=executeCommand(req,endpoint);
     console.log(result);
+    
+    if((result.status)===200){
+        alert("Data inserted success. "+(result.message));
+    }
+    else{
+        alert("Data not inserted "+(result.message))
+    }
     jQuery.ajaxSetup({async:true})
 }
 
